@@ -1,0 +1,33 @@
+﻿@model CarsStore.Models.ViewModels.Adverts.DetailsOfferVm
+@{
+    ViewBag.Title = "Details about the offer";
+}
+
+<strong>@Html.DisplayNameFor(Model=> Model.Brand)</strong>
+@Html.DisplayFor(vm=>Model.Brand)
+<br/>
+
+<strong>@Html.DisplayNameFor(Model => Model.Model)</strong>
+@Html.DisplayFor(vm => Model.Model)
+<br />
+
+<strong>@Html.DisplayNameFor(Model => Model.OriginDate)</strong>
+@Html.DisplayFor(vm => Model.OriginDate)
+<br />
+
+<strong>@Html.DisplayNameFor(Model => Model.Description)</strong>
+@Html.DisplayFor(vm => Model.Description)
+<br />
+
+<strong>@Html.DisplayNameFor(Model => Model.Price)</strong>
+@Html.DisplayFor(vm => Model.Price)
+<br />
+
+<strong>@Html.DisplayNameFor(Model => Model.Seller.Name)</strong>
+@Html.DisplayFor(vm => Model.Seller.Name)
+<br />
+
+@Html.DisplayNameFor(model => model.Image)
+<img id="detailsViewAttractionImage" alt="Image" src="@Url.Action("OfferImage","Offers", new {id = Model.Id})" />
+
+@Html.ActionLink("Home","Index","Home",null,new {@class="btn btn-lg btn-primary"})

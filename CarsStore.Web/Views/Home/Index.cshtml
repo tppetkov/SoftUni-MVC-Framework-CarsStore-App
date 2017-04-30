@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CarsStore.Models.ViewModels.Adverts.OfferVm>
+
+@{
+    ViewBag.Title = "Cars Store Home";
+}
+
+<h2>You are looking for a car? This is the right place!</h2>
+
+@foreach (var vm in Model)
+{   <div>
+        @Html.DisplayNameFor(advertsVm => advertsVm.Brand)
+        @Html.DisplayFor(avm => vm.Brand)
+        <br/>
+        @Html.DisplayNameFor(advertsVm => advertsVm.Model)
+        @Html.DisplayFor(avm => vm.Model)
+        <br/>
+        @Html.DisplayNameFor(advertsVm => advertsVm.Price)
+        @Html.DisplayFor(avm => vm.Price)
+    
+        @Html.ActionLink("Details","Details","Offers",new {id=vm.Id}, new {@class="btn btn-lg btn-primary"})
+    </div>
+}
