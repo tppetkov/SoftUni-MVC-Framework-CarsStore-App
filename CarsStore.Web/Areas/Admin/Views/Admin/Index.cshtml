@@ -6,30 +6,50 @@
 
 <h2>Admin area</h2>
 
-@Html.ActionLink("Add offer","AddOffer",null,new {@class="btn btn-lg"})
-
+@Html.ActionLink("Add offer", "AddOffer", null, new { @class = "btn btn-lg" })
+<div class="row">
+    <div class="col-md-12">
+        <h2>Manage Roles</h2>
+        @Html.ActionLink("Create new Role", "Create", null, new { @class = "btn btn-lg" })
+        @Html.ActionLink("Edit Role", "Edit", null, new { @class = "btn btn-lg" })
+        @Html.ActionLink("Delete", "Delete", null, new { @class = "btn btn-lg" })
+    </div>
+</div>
 <div class="row">
     <div class="col-md-6">
         <h3>Offers</h3>
-        @foreach (var offer in Model.Offers)
-        {
-            <div>
-                <h4>@Html.DisplayFor(vm => offer.Id)</h4>
-                <h4>@Html.DisplayFor(vm => offer.Brand)</h4>
-                @Html.ActionLink("Edit","EditOfffer",new {id=offer.Id},new {@class="btn btn-lg btn-primary"})
-            </div>
-        }
+        <table class="table table-stripped">
+            <tr>
+                <th>Offer Id</th>
+                <th>Brand Name</th>
+            </tr>
+            @foreach (var offer in Model.Offers)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(vm => offer.Id)</td>
+                    <td>@Html.DisplayFor(vm => offer.Brand)</td>
+                    <td>@Html.ActionLink("Edit", "EditOfffer", new { id = offer.Id }, new { @class = "btn btn-lg btn-primary" })</td>
+                    <td>@Html.ActionLink("Delete", "DeleteOfffer", new { id = offer.Id }, new { @class = "btn btn-lg btn-warning" })</td>
+                </tr>
+            }
+        </table>
     </div>
     <div class="col-md-6">
         <h3>Users</h3>
-        @foreach (var user in Model.Users)
-        {
-            <div>
-                <h4>@Html.DisplayFor(vm => user.Id)</h4>
-                <h4>@Html.DisplayFor(vm => user.Name)</h4>
-                @Html.ActionLink("Edit", "EditUser", new { id = user.Id }, new { @class = "btn btn-lg btn-primary" })
-            </div>
-        }
+        <table class="table table-stripped">
+            <tr>
+                <th>User Id</th>
+                <th>Username</th>
+            </tr>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(vm => user.Id)</td>
+                    <td>@Html.DisplayFor(vm => user.Name)</td>
+                    <td>@Html.ActionLink("Edit", "EditUser", new { id = user.Id }, new { @class = "btn btn-lg btn-primary" })</td>
+                </tr>
+            }
+        </table>
     </div>
 </div>
 

@@ -15,5 +15,7 @@
         public string Description { get; set; }
         [Required]
         public decimal Price { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

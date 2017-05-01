@@ -1,20 +1,67 @@
-﻿
+﻿@model CarsStore.Models.ViewModels.Adverts.AddOfferVm
 @{
     ViewBag.Title = "Add an Offer";
 }
 
 @using (Html.BeginForm("AddOffer", "Offers", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input type="text" name="brand" />
-    <input type="text" name="model" />
-    <input type="number" name="price" />
-    <input type="datetime" name="originDate" />
-    <textarea row="10" col="15" name="description"></textarea>
-    <div class="form-group">
-        <div class="col-md-10">
-            <input type="file" name="file" value="" />
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Brand, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Brand, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="number" name="price" class="form-control" />
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OriginDate, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.OriginDate, null, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", rows = "10" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" name="file" value="" />
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                        <input type="Submit" value="Add" class="btn btn-lg btn-primary" />
+                    @Html.ActionLink("Home", "Index","Home",null,new {@class= "btn btn-lg btn-info" })
+                    </div>
+            </div>
         </div>
     </div>
-    <input type="Submit" value="Add" />
 }
 
