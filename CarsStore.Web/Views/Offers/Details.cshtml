@@ -2,32 +2,42 @@
 @{
     ViewBag.Title = "Details about the offer";
 }
+<div class="row top-space-row">
+    <div class="col-md-6">
+        <img id="detailsViewImage" class="img-responsive" alt="Image" src="@Url.Action("OfferImage", "Offers", new { id = Model.Id })" />
+    </div>
+    <div class="col-md-6">
+        <div class="detail-container">
+            <strong>@Html.DisplayNameFor(Model => Model.Brand)</strong>
+            @Html.DisplayFor(vm => Model.Brand)
 
-<strong>@Html.DisplayNameFor(Model=> Model.Brand)</strong>
-@Html.DisplayFor(vm=>Model.Brand)
-<br/>
+        </div>
+        <div class="detail-container">
+            <strong>@Html.DisplayNameFor(Model => Model.Model)</strong>
+            @Html.DisplayFor(vm => Model.Model)
+        </div>
+        <div class="detail-container">
 
-<strong>@Html.DisplayNameFor(Model => Model.Model)</strong>
-@Html.DisplayFor(vm => Model.Model)
-<br />
+            <strong>@Html.DisplayNameFor(Model => Model.OriginDate)</strong>
+            @Html.DisplayFor(vm => Model.OriginDate)
+        </div>
+        <div class="detail-container">
 
-<strong>@Html.DisplayNameFor(Model => Model.OriginDate)</strong>
-@Html.DisplayFor(vm => Model.OriginDate)
-<br />
+            <strong>@Html.DisplayNameFor(Model => Model.Description)</strong>
+            @Html.DisplayFor(vm => Model.Description)
+        </div>
+        <div class="detail-container">
 
-<strong>@Html.DisplayNameFor(Model => Model.Description)</strong>
-@Html.DisplayFor(vm => Model.Description)
-<br />
+            <strong>@Html.DisplayNameFor(Model => Model.Price)</strong>
+            @Html.DisplayFor(vm => Model.Price)
+        </div>
+        <div class="detail-container">
 
-<strong>@Html.DisplayNameFor(Model => Model.Price)</strong>
-@Html.DisplayFor(vm => Model.Price)
-<br />
+            <strong>@Html.DisplayNameFor(Model => Model.Seller.Name)</strong>
+            @Html.DisplayFor(vm => Model.Seller.Name)
+        </div>
 
-<strong>@Html.DisplayNameFor(Model => Model.Seller.Name)</strong>
-@Html.DisplayFor(vm => Model.Seller.Name)
-<br />
 
-@Html.DisplayNameFor(model => model.Image)
-<img id="detailsViewAttractionImage" alt="Image" src="@Url.Action("OfferImage","Offers", new {id = Model.Id})" />
-
-@Html.ActionLink("Home","Index","Home",null,new {@class="btn btn-lg btn-primary"})
+        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-lg btn-primary" })
+    </div>
+</div>

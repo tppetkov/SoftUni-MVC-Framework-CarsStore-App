@@ -1,0 +1,1 @@
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Tests\obj\Debug\CarsStore.Tests.csprojResolveAssemblyReference.cache
