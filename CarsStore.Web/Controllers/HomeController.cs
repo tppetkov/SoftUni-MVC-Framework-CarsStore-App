@@ -22,22 +22,27 @@ namespace CarsStore.Web.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            return this.View();
+        }
+
+        public ActionResult GetAll()
+        {
             IEnumerable<OfferVm> avm = this.service.GetAllAdverts();
-            return View(avm);
+            return this.PartialView("GetAll",avm);
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return this.View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            this.ViewBag.Message = "Your contact page.";
 
-            return View();
+            return this.View();
         }
     }
 }
