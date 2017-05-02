@@ -89,7 +89,7 @@ namespace CarsStore.Web.Areas.Admin.Controllers
         
         public ActionResult Delete(string roleName)
         {
-            var thisRole = this.Context.Roles.Where(r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            var thisRole = this.Context.Roles.FirstOrDefault(r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase));
             this.Context.Roles.Remove(thisRole);
             this.Context.SaveChanges();
             return this.RedirectToAction("Index");
@@ -109,7 +109,7 @@ namespace CarsStore.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RoleAddToUser(string userName, string roleName)
         {
-            ApplicationUser currentUser = this.Context.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            ApplicationUser currentUser = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
             var userManager = this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var addRoleResult = userManager.AddToRole(currentUser.Id, roleName);
             if (addRoleResult.Succeeded)
@@ -117,7 +117,6 @@ namespace CarsStore.Web.Areas.Admin.Controllers
                 this.ViewBag.ResultMessage = "Role created successfully !";
             }
 
-            // prepopulat roles for the view dropdown
             var list = this.Context.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
             this.ViewBag.Roles = list;
 
@@ -131,12 +130,11 @@ namespace CarsStore.Web.Areas.Admin.Controllers
         {
             if (!string.IsNullOrWhiteSpace(userName))
             {
-                ApplicationUser user = this.Context.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+                ApplicationUser user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
                 var userManager = this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
                 this.ViewBag.RolesForThisUser = userManager.GetRoles(user.Id);
 
-                // prepopulat roles for the view dropdown
                 var list = this.Context.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
                 this.ViewBag.Roles = list;
             }
@@ -150,7 +148,7 @@ namespace CarsStore.Web.Areas.Admin.Controllers
         public ActionResult DeleteRoleForUser(string userName, string roleName)
         {
             var userManager = this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            ApplicationUser user = this.Context.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            ApplicationUser user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
 
             if (userManager.IsInRole(user.Id, roleName))
             {
@@ -161,7 +159,6 @@ namespace CarsStore.Web.Areas.Admin.Controllers
             {
                 this.ViewBag.ResultMessage = "This user doesn't belong to selected role.";
             }
-            // prepopulat roles for the view dropdown
             var list = this.Context.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
             this.ViewBag.Roles = list;
 

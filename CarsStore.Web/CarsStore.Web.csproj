@@ -297,6 +297,7 @@
     <Content Include="Views\Offers\AddOffer.cshtml" />
     <Content Include="Views\Shared\OfferImage.cshtml" />
     <Content Include="Views\Home\GetAll.cshtml" />
+    <Content Include="Views\Shared\OfferImageSmall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

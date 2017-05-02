@@ -1,0 +1,10 @@
+﻿@model CarsStore.Models.EntityModels.CarOffer
+@{
+    if (Model.Image != null)
+    {
+        WebImage wi = new WebImage(Model.Image);
+        wi.Resize(200, 300, true, true);
+
+        wi.Write();
+    }
+}

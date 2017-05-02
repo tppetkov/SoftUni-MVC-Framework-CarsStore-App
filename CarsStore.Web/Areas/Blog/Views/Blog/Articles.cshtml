@@ -12,15 +12,15 @@
 <section>
     @foreach (var vm in Model)
     {
-        <article>
-            <h3>@Html.DisplayFor(vms => vm.Title)</h3>
+        <article class="article top-space-row">
+            <h2>@Html.DisplayFor(vms => vm.Title)</h2>
             <p>
                 @Html.DisplayFor(vms => vm.Content)
             </p>    
-            <br/>
             <hr/>
-            <span class="author">@Html.DisplayFor(vms=>vm.Author.Name)</span>
-            <span class="publish-date">@Html.DisplayFor(vms => vm.PublishDate)</span>
+            <strong>User: </strong><span class="author">@Html.DisplayFor(vms=>vm.Author.Name)</span>
+            <br />
+            <strong>Date: </strong><span class="publish-date">@Html.DisplayFor(vms => vm.PublishDate)</span>
         </article>
     }
 </section>

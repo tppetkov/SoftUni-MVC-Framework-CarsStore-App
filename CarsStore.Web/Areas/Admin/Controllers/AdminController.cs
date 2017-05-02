@@ -41,6 +41,14 @@ namespace CarsStore.Web.Areas.Admin.Controllers
             return this.View();
         }
 
+        [Route("offers/delete/{id}")]
+        public ActionResult DeleteOffer(int id)
+        {
+            this.service.DeleteOffer(id);
+
+            return this.RedirectToAction("Index");
+        }
+
         [HttpGet]
         [Route("users/{id}/edit")]
         public ActionResult EditUser(int id)

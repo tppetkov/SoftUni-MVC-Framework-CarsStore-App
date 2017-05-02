@@ -33,3 +33,9 @@ textarea {
     border: 3px solid tomato;
     border-radius: 40px 0;
 }
+
+.article {
+    padding: 10px;
+    border: 3px solid tomato;
+    border-radius: 10px 10px;
+}

@@ -1,6 +1,7 @@
 ﻿namespace CarsStore.Service
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using AutoMapper;
 
@@ -23,6 +24,13 @@
             page.Offers = offerVms;
 
             return page;
+        }
+
+        public void DeleteOffer(int id)
+        {
+            var offer = this.Context.CarsAdvertisements.FirstOrDefault(off => off.Id == id);
+            this.Context.CarsAdvertisements.Remove(offer);
+            this.Context.SaveChanges();
         }
     }
 }

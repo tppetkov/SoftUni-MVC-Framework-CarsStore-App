@@ -70,5 +70,17 @@ namespace CarsStore.Web.Controllers
             return this.PartialView(offer);
         }
 
+        public ActionResult OfferImageSmall(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            CarOffer offer = this.service.GetAttractionImage((int)id);
+
+            return this.PartialView(offer);
+        }
+
     } 
 }

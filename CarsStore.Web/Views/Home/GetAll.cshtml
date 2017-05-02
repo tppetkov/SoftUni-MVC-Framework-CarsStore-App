@@ -29,7 +29,7 @@
                 @Html.DisplayFor(avm => vm.Price)
             </td>
             <td>
-                <img class="img-responsive" alt="Image" src="@Url.Action("OfferImage","Offers", new {id= vm.Id })" />
+                <img class="img-responsive" alt="Image" src="@Url.Action("OfferImageSmall","Offers", new {id= vm.Id })" />
             </td>
             <td>
                 @Html.ActionLink("Details", "Details", "Offers", new { id = vm.Id }, new { @class = "btn btn-lg btn-primary" })
