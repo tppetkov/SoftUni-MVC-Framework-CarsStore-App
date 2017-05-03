@@ -24,13 +24,13 @@ namespace CarsStore.Web.Controllers
         {
             return this.View();
         }
-
+        [AllowAnonymous]
         public ActionResult GetAll()
         {
             IEnumerable<OfferVm> avm = this.service.GetAllAdverts();
             return this.PartialView("GetAll",avm);
         }
-
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -38,11 +38,11 @@ namespace CarsStore.Web.Controllers
             return this.View();
         }
 
-        public ActionResult Contact()
-        {
-            this.ViewBag.Message = "Your contact page.";
-
-            return this.View();
-        }
+        //public ActionResult Contact()
+        //{
+        //    this.ViewBag.Message = "Your contact page.";
+        //
+        //    return this.View();
+        //}
     }
 }

@@ -45,7 +45,9 @@ namespace CarsStore.Web
                        expresion.CreateMap<ApplicationUser, ArticleAuthorVm>();
                        expresion.CreateMap<AddArticleBm,Article>();
                        expresion.CreateMap<RegularUser, AdminUserVm>().ForMember(vm=>vm.Name,configureExpresion => 
-                       configureExpresion.MapFrom(regUser=> regUser.User.Name));
+                       configureExpresion.MapFrom(regUser=> regUser.User.Name))
+                       .ForMember(vm => vm.Email, configureExpresion =>
+                          configureExpresion.MapFrom(regUser => regUser.User.Email));
                    });
         }
 

@@ -37,14 +37,16 @@
         <table class="table table-stripped">
             <tr>
                 <th>User Id</th>
-                <th>Username</th>
+                <th>Email</th>
+                <th>Name</th>
             </tr>
             @foreach (var user in Model.Users)
             {
                 <tr>
                     <td>@Html.DisplayFor(vm => user.Id)</td>
+                    <td>@Html.DisplayFor(vm => user.Email)</td>
                     <td>@Html.DisplayFor(vm => user.Name)</td>
-                    <td>@Html.ActionLink("Edit", "EditUser", new { id = user.Id }, new { @class = "btn btn-lg btn-primary" })</td>
+                    <td>@Html.ActionLink("Delete", "DeleteUser", null, new { @class = "btn btn-lg btn-primary" })</td>
                 </tr>
             }
         </table>

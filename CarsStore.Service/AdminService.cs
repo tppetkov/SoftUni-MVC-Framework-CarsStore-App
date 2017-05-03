@@ -32,5 +32,16 @@
             this.Context.CarsAdvertisements.Remove(offer);
             this.Context.SaveChanges();
         }
+
+        public void DeleteUser(string username)
+        {
+            var user = this.Context.Users.FirstOrDefault(u => u.UserName == username);
+
+            if (user != null)
+            {
+                this.Context.Users.Remove(user);
+                this.Context.SaveChanges();
+            }
+        }
     }
 }

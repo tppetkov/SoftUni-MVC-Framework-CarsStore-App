@@ -23,7 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "", Controller = "Home" },null)</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "", Controller = "Home" }, null)</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "", Controller = "Home" }, null)</li>
+                    
 
                     @if (User.IsInRole("User"))
                     {
@@ -36,6 +36,8 @@
                     {
                         <li>@Html.ActionLink("Admin", "Index", "Admin", new { area = "", Controller = "Admin" }, null)</li>
                     }
+                    
+                    <li class= "slide-line" ></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

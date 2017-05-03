@@ -10,6 +10,7 @@ namespace CarsStore.Web.Areas.Admin.Controllers
     using CarsStore.Models.EntityModels;
     using CarsStore.Models.ViewModels.Admin;
     using CarsStore.Service;
+    using CarsStore.Web.Attributes;
     using CarsStore.Web.Controllers;
 
     using Microsoft.AspNet.Identity;
@@ -20,6 +21,7 @@ namespace CarsStore.Web.Areas.Admin.Controllers
     public class AdminController : Controller
     {
         private AdminService service;
+
        
         public AdminController()
         {
@@ -49,11 +51,14 @@ namespace CarsStore.Web.Areas.Admin.Controllers
             return this.RedirectToAction("Index");
         }
 
-        [HttpGet]
-        [Route("users/{id}/edit")]
-        public ActionResult EditUser(int id)
+        [HttpPost]
+        [Route]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteUser(string username)
         {
-            return this.View();
+            this.service.DeleteUser(username);
+            
+            return this.RedirectToAction("Index");
         }
     }
 }

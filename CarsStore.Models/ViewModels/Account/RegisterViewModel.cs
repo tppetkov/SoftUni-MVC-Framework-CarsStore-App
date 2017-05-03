@@ -20,7 +20,7 @@
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-        [Required,StringLength(2)]
+        [Required]
         public string Name { get; set; }
         [Required,Display(Name="Birth date")]
         public DateTime BirthDate { get; set; }

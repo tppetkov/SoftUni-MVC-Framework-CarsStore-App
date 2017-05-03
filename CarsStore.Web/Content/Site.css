@@ -39,3 +39,17 @@ textarea {
     border: 3px solid tomato;
     border-radius: 10px 10px;
 }
+
+.navbar-nav{
+    position: relative;
+}
+
+.navbar-collapse> ul > li.slide-line {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    background: limegreen;
+    transition: all 0.5s;
+}

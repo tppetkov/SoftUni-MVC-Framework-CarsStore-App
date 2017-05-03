@@ -6,9 +6,9 @@
 
 <table class="table table-striped">
     <tr>
-        <th>Brand</th>
-        <th>Model</th>
-        <th>Price</th>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Brand)</th>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Model)</th>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Price)</th>
         <th></th>
         <th></th>
     </tr>
@@ -16,16 +16,13 @@
     @foreach (var vm in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayNameFor(advertsVm => advertsVm.Brand)
+            <td>                
                 @Html.DisplayFor(avm => vm.Brand)
             </td>
             <td>
-                @Html.DisplayNameFor(advertsVm => advertsVm.Model)
                 @Html.DisplayFor(avm => vm.Model)
             </td>
             <td>
-                @Html.DisplayNameFor(advertsVm => advertsVm.Price)
                 @Html.DisplayFor(avm => vm.Price)
             </td>
             <td>
