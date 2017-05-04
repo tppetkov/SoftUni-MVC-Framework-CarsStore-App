@@ -4,10 +4,12 @@
 
     using AutoMapper;
 
+    using CarsStore.Service.Interfaces;
+
     using Models.EntityModels;
     using Models.ViewModels.Adverts;
 
-    public class HomeService:Service
+    public class HomeService:Service, IHomeService
     {
         public IEnumerable<OfferVm> GetAllAdverts()
         {

@@ -12,6 +12,7 @@ namespace CarsStore.Web.Controllers
     using Models.EntityModels;
     using Models.ViewModels.Account;
     using CarsStore.Service;
+    using CarsStore.Service.Interfaces;
 
     [Authorize]
     [RoutePrefix("account")]
@@ -19,15 +20,14 @@ namespace CarsStore.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private AccountService service;
+        private IAccountService service;
 
-        public AccountController()
+        public AccountController(IAccountService service)
         {
-            this.service=new AccountService();
+            this.service=service;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-            :this()
         {
             UserManager = userManager;
             SignInManager = signInManager;

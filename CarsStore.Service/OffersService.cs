@@ -9,11 +9,12 @@
 
     using CarsStore.Models.BindingModels;
     using CarsStore.Models.BindingModels.Blog;
+    using CarsStore.Service.Interfaces;
 
     using Models.EntityModels;
     using Models.ViewModels.Adverts;
 
-    public class OffersService:Service
+    public class OffersService:Service, IOffersService
     {
         public DetailsOfferVm GetDetails(int id)
         {
@@ -43,7 +44,7 @@
             this.Context.SaveChanges();
         }
 
-        private byte[] GetImageFromBind(HttpPostedFileBase bindImage)
+        public byte[] GetImageFromBind(HttpPostedFileBase bindImage)
         {
             if (bindImage != null)
             {

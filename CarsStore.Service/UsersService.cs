@@ -4,11 +4,13 @@
 
     using AutoMapper;
 
+    using CarsStore.Service.Interfaces;
+
     using Models.BindingModels.Users;
     using Models.EntityModels;
     using Models.ViewModels.Users;
 
-    public class UsersService:Service
+    public class UsersService:Service, IUsersService
     {
         
         public ProfileVm GetProfileVm(string userName)

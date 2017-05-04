@@ -1,8 +1,10 @@
 ﻿namespace CarsStore.Service
 {
+    using CarsStore.Service.Interfaces;
+
     using Models.EntityModels;
 
-    public class AccountService:Service
+    public class AccountService:Service, IAccountService
     {
         public void CreateUser(ApplicationUser user)
         {

@@ -7,16 +7,18 @@ namespace CarsStore.Web.Controllers
     using Service;
     using Attributes;
 
+    using CarsStore.Service.Interfaces;
+
     using Models.ViewModels.Adverts;
 
     [MyAuthorize(Roles="User")]
     public class HomeController : Controller
     {
-        private HomeService service;
+        private IHomeService service;
 
-        public HomeController()
+        public HomeController(IHomeService service)
         {
-            this.service = new HomeService();
+            this.service =service;
         }
 
         [AllowAnonymous]

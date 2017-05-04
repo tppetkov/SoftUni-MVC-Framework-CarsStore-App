@@ -7,16 +7,17 @@ namespace CarsStore.Web.Areas.Blog.Controllers
 
     using Models.ViewModels.Blog;
     using CarsStore.Service;
+    using CarsStore.Service.Interfaces;
 
     [RouteArea("blog")]
     [Authorize(Roles = "User")]
     public class BlogController : Controller
     {
-        private BlogService service;
+        private IBlogService service;
 
-        public BlogController()
+        public BlogController(IBlogService service)
         {
-            this.service=new BlogService();
+            this.service=service;
         }
         [Route("articles")]
         public ActionResult Articles()

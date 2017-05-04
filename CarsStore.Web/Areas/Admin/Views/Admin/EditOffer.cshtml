@@ -1,0 +1,34 @@
+﻿@model CarsStore.Models.ViewModels.Adverts.EditOfferVm
+@{
+    ViewBag.Title = "Edit Offer";
+}
+
+<h2>EditOffer</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Brand)
+        @Html.EditorFor(vm => vm.Brand, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Model)
+        @Html.EditorFor(vm => vm.Model, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.OriginDate)
+        @Html.EditorFor(vm => vm.OriginDate, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Description)
+        @Html.EditorFor(vm => vm.Description, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Price)
+        @Html.EditorFor(vm => vm.Price, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        <input type="Submit" value="Edit" class="btn btn-lg btn-success" />
+    </div>
+}

@@ -268,3 +268,10 @@ D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Microsoft.Owi
 D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\obj\Debug\CarsStore.Web.csprojResolveAssemblyReference.cache
 D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\obj\Debug\CarsStore.Web.dll
 D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\obj\Debug\CarsStore.Web.pdb
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.dll
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.Web.Common.dll
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.Web.Mvc.dll
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\WebActivatorEx.dll
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.xml
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.Web.Common.xml
+D:\CSharpMVC\SoftUni-MVC-Framework-CarsStore-App\CarsStore.Web\bin\Ninject.Web.Mvc.xml

@@ -12,16 +12,17 @@ namespace CarsStore.Web.Controllers
 
     using Models.ViewModels.Adverts;
     using CarsStore.Service;
+    using CarsStore.Service.Interfaces;
 
     [Authorize(Roles = "User")]
     [RoutePrefix("adverts")]
     public class OffersController : Controller
     {
-        private OffersService service;
+        private IOffersService service;
 
-        public OffersController()
+        public OffersController(IOffersService service)
         {
-            this.service=new OffersService();
+            this.service=service;
         }
 
         [AllowAnonymous]

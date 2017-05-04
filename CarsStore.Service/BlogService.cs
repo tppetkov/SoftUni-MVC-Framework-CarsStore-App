@@ -7,11 +7,12 @@
     using AutoMapper;
 
     using CarsStore.Models.BindingModels.Blog;
+    using CarsStore.Service.Interfaces;
 
     using Models.EntityModels;
     using Models.ViewModels.Blog;
 
-    public class BlogService:Service
+    public class BlogService:Service, IBlogService
     {
         public IEnumerable<ArticleVm> GetAllArticles()
         {

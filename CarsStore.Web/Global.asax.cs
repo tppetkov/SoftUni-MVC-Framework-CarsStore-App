@@ -10,6 +10,7 @@ namespace CarsStore.Web
 
     using CarsStore.Models.BindingModels;
     using CarsStore.Models.BindingModels.Blog;
+    using CarsStore.Models.BindingModels.Offers;
     using CarsStore.Models.ViewModels.Admin;
 
     using Models.BindingModels.Users;
@@ -38,6 +39,8 @@ namespace CarsStore.Web
                        expresion.CreateMap<CarOffer, DetailsOfferVm>();
                        expresion.CreateMap<AddOfferBm,CarOffer>();
                        expresion.CreateMap<CarOffer, AddOfferVm>();
+                       expresion.CreateMap<CarOffer, EditOfferVm>();
+                       expresion.CreateMap<EditOfferBm,CarOffer>();
                        expresion.CreateMap<ApplicationUser, ProfileVm>();
                        expresion.CreateMap<ApplicationUser, EditUserVm>();
                        expresion.CreateMap<ApplicationUser, EditUserBm>();

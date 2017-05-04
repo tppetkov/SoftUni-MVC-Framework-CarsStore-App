@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="BindingModels\AddOfferBm.cs" />
     <Compile Include="BindingModels\Blog\AddArticleBm.cs" />
+    <Compile Include="BindingModels\Offers\EditOfferBm.cs" />
     <Compile Include="BindingModels\Users\EditUserBm.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Article.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="ViewModels\Admin\AdminPageVm.cs" />
     <Compile Include="ViewModels\Admin\AdminUserVm.cs" />
     <Compile Include="ViewModels\Adverts\AddOfferVm.cs" />
+    <Compile Include="ViewModels\Adverts\EditOfferVm.cs" />
     <Compile Include="ViewModels\Adverts\OfferVm.cs" />
     <Compile Include="ViewModels\Adverts\DetailsOfferVm.cs" />
     <Compile Include="ViewModels\Blog\AddArticleVm.cs" />

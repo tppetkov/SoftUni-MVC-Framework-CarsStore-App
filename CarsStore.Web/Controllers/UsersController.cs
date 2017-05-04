@@ -2,6 +2,8 @@
 
 namespace CarsStore.Web.Controllers
 {
+    using CarsStore.Service.Interfaces;
+
     using Models.BindingModels.Users;
     using Models.ViewModels.Users;
 
@@ -9,11 +11,11 @@ namespace CarsStore.Web.Controllers
 
     public class UsersController : Controller
     {
-        private UsersService service;
+        private IUsersService service;
 
-        public UsersController()
+        public UsersController(IUsersService service)
         {
-            this.service=new UsersService();
+            this.service=service;
         }
         [Route("profile")]
         public ActionResult Profile() 
