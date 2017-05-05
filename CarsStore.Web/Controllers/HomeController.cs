@@ -40,11 +40,12 @@ namespace CarsStore.Web.Controllers
             return this.View();
         }
 
-        //public ActionResult Contact()
-        //{
-        //    this.ViewBag.Message = "Your contact page.";
-        //
-        //    return this.View();
-        //}
+        [Route("home/error")]
+        public ActionResult Error()
+        {
+            
+        
+            return this.View();
+        }
     }
 }

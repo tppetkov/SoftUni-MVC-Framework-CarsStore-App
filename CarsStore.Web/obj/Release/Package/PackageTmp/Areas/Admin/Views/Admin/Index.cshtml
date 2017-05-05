@@ -1,0 +1,55 @@
+﻿@model CarsStore.Models.ViewModels.Admin.AdminPageVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin panel";
+}
+
+<h2>Admin area</h2>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Manage Roles</h3>
+        @Html.ActionLink("Manage Roles", "Index","Roles", null, new { @class = "btn btn-lg btn-primary" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Offers</h3>
+        <table class="table table-stripped">
+            <tr>
+                <th>Offer Id</th>
+                <th>Brand Name</th>
+            </tr>
+            @foreach (var offer in Model.Offers)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(vm => offer.Id)</td>
+                    <td>@Html.DisplayFor(vm => offer.Brand)</td>
+                    <td>@Html.ActionLink("Edit", "GetEditOffer", new { id = offer.Id }, new { @class = "btn btn-lg btn-primary" })</td>
+                    <td>@Html.ActionLink("Delete", "DeleteOffer", new { id = offer.Id }, new { @class = "btn btn-lg btn-warning" })</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h3>Users</h3>
+        <table class="table table-stripped">
+            <tr>
+                <th>User Id</th>
+                <th>Email</th>
+                <th>Name</th>
+            </tr>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(vm => user.Id)</td>
+                    <td>@Html.DisplayFor(vm => user.Email)</td>
+                    <td>@Html.DisplayFor(vm => user.Name)</td>
+                    <td>@Html.ActionLink("Delete", "DeleteUser", null, new { @class = "btn btn-lg btn-primary" })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

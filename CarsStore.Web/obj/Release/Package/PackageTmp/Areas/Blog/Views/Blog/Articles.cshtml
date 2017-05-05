@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CarsStore.Models.ViewModels.Blog.ArticleVm>
+  @{
+      Layout = "~/Views/Shared/_Layout.cshtml"; 
+  }
+<h2>All Articles</h2>
+
+@if (User.IsInRole("BlogAuthor"))
+{
+    @Html.ActionLink("Add", "Add",null, new {@class="btn btn-lg btn-primary"})
+}
+
+<section>
+    @foreach (var vm in Model)
+    {
+        <article class="article top-space-row">
+            <h2>@Html.DisplayFor(vms => vm.Title)</h2>
+            <p>
+                @Html.DisplayFor(vms => vm.Content)
+            </p>    
+            <hr/>
+            <strong>User: </strong><span class="author">@Html.DisplayFor(vms=>vm.Author.Name)</span>
+            <br />
+            <strong>Date: </strong><span class="publish-date">@Html.DisplayFor(vms => vm.PublishDate)</span>
+        </article>
+    }
+</section>

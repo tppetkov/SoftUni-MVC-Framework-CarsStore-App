@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Cars Store Home";
+}
+
+<h2>You are looking for a car? This is the right place!</h2>
+<div id="content"></div>
+
+
+
+@section scripts{
+    <script>
+        $(document)
+            .ready(
+                function() {
+                    $("#content").load("/home/getall");
+                });
+    </script>
+}

@@ -13,7 +13,7 @@ namespace CarsStore.Data
             : base("data source=MRT-PC\\SQLEXPRESS2;initial catalog=CarsStore.Data.CarsStoreContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
-
+        
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<CarOffer> CarsAdvertisements { get; set; }

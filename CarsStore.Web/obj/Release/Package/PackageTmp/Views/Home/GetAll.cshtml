@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CarsStore.Models.ViewModels.Adverts.OfferVm>
+
+@{
+    ViewBag.Title = "Get all cars";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Brand)</th>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Model)</th>
+        <th>@Html.DisplayNameFor(advertsVm => advertsVm.Price)</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var vm in Model)
+    {
+        <tr>
+            <td>                
+                @Html.DisplayFor(avm => vm.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(avm => vm.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(avm => vm.Price)
+            </td>
+            <td>
+                <img class="img-responsive" alt="Image" src="@Url.Action("OfferImageSmall","Offers", new {id= vm.Id })" />
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", "Offers", new { id = vm.Id }, new { @class = "btn btn-lg btn-primary" })
+            </td>
+        </tr>
+    }
+</table>
+

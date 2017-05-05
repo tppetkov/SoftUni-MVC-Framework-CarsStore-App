@@ -59,6 +59,7 @@ namespace CarsStore.Web.Controllers
             return this.View();
         }
 
+        [AllowAnonymous]
         public ActionResult OfferImage(int? id)
         {
             if (id == null)
@@ -70,7 +71,7 @@ namespace CarsStore.Web.Controllers
 
             return this.PartialView(offer);
         }
-
+        [AllowAnonymous]
         public ActionResult OfferImageSmall(int? id)
         {
             if (id == null)

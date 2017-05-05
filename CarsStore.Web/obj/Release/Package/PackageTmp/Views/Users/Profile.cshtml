@@ -1,0 +1,14 @@
+﻿@model CarsStore.Models.ViewModels.Users.ProfileVm    
+@{
+    ViewBag.Title = "My account";
+}
+
+<h2>My Profile</h2>
+
+@Html.ActionLink("Edit","Edit")
+
+<h3>Name: @Html.DisplayFor(vm => vm.Name)</h3>
+<h3>Email: @Html.DisplayFor(vm => vm.Email)</h3>
+<h3>BirthDate: @Html.DisplayFor(vm => vm.BirthDate)</h3>
+
+@Html.ActionLink("Home","Index","Home")
